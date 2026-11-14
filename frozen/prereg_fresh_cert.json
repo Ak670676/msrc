@@ -1,0 +1,28 @@
+{
+ "alpha": 0.05,
+ "created": "2026-11-11T20:59:15.565546+05:30",
+ "delta": 0.05,
+ "images": "seed-13 shuffled val2014 list, indices [3500, 5000) -- disjoint from calib [0,500) and eval [500,3500)",
+ "lambda": {
+  "iblip": {
+   "tau0": 0.6654241474369551,
+   "tau_lad": Infinity,
+   "tau_sub": 0.9334332998709735
+  },
+  "llava": {
+   "tau0": 0.7606499581680939,
+   "tau_lad": Infinity,
+   "tau_sub": 0.8757865766688021
+  },
+  "qwen25": {
+   "tau0": 0.7782153996766448,
+   "tau_lad": Infinity,
+   "tau_sub": 0.02299257551332768
+  }
+ },
+ "lane": "MSRC (tau_sub as frozen); VOF also reported (tau_sub=inf) under the same rule",
+ "policy": "MAIN policy in unified.py, lambda frozen from the 500-image calibration (out/unified_results.json, ablation=main)",
+ "purpose": "pre-registered certification on images never scored before (dbeQ W4 / GSTT W1)",
+ "secondary": "Hoeffding and empirical Bernstein reported for information only; they do not decide certification",
+ "test": "certify iff WSR betting UCB (certify_coco.py wsr_ucb, cap c/(1-m)) of mean per-image charged loss <= alpha; images with no in-scope claim excluded"
+}
